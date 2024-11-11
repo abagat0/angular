@@ -1,0 +1,46 @@
+<div *ngIf="gameCompleted; else gameInProgress">
+    <app-finish [timeSpent]="timeSpent" (restart)="restartGame($event)"></app-finish>
+  </div>
+
+  <div *ngIf="gameFailed">
+    <app-game-over (restart)="restartGame($event)"></app-game-over>
+  </div>
+  
+  <ng-template #gameInProgress >
+    <div class="container">
+        <h1>Hangman - Etap {{ currentStage }} z 5</h1>
+        <div class="game-container-hangman">
+            <div class="hangimg">
+                <img [src]="getHangmanImage()" alt="Hangman">
+            </div>
+        </div>
+        <div class="game-container">
+            <p>Pozostało prób: <span [ngClass]="{
+                'red': remainingTries === 0,
+                'normal': remainingTries !== 0 
+              }">{{ remainingTries }}</span></p>
+        </div>
+        <br/>
+        <br/>
+        <div class="game-container">
+            <h2>Odgadywane slowo:</h2>
+        </div>
+        <div class="game-container">
+            <p>{{ getWordDisplay() }}</p>
+        </div>
+        <br/>
+        
+        <br />
+        <div class="game-container">
+            <p>Wybierz litere:</p>
+        </div>
+        <div class="game-container">
+            <div class="alphabet">
+            <button *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'.split('')" (click)="makeGuess(letter)">
+                {{ letter }}
+            </button>
+            </div>
+        </div>
+        
+    </div>
+  </ng-template>

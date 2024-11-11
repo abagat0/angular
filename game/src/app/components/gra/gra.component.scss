@@ -1,0 +1,58 @@
+.hangimg {
+    width:200px;
+}
+
+.container{
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding-top: 170px;
+    background-image: 
+            linear-gradient(to right, #a5a5a5 1px, transparent 1px), 
+            linear-gradient(to bottom, #a5a5a5 1px, transparent 1px); 
+    background-size: 20px 20px; 
+    background-position: top left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 100vh;
+}
+
+button {
+    background-color: rgb(220, 216, 216);
+    color: black;
+    padding: 10px;
+    border: 0;
+    width:30px;
+    margin-right:5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: silver;
+}
+
+h1{
+    text-align: center;
+    color: #0895db;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    align-items: center;
+}
+
+.game-container-hangman {
+    margin-left: 120px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    align-items: center;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+.normal {
+    font-weight: bold;
+}
